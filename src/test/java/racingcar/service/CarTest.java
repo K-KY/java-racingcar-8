@@ -45,4 +45,13 @@ class CarTest {
         car.updateProgress(5);
         assertThat(car.toString()).isEqualTo("name : -");
     }
+
+    @Test
+    @DisplayName("동등성 테스트")
+    void equalsTest() {
+        Car car1 = new Car("name");
+        Car car2 = new Car("name");
+        assertThat(car1).isEqualTo(car2);
+        assertThat(car1.hashCode()).isEqualTo(car2.hashCode());
+    }
 }
