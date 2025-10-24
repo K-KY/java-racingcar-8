@@ -54,4 +54,21 @@ class CarTest {
         assertThat(car1).isEqualTo(car2);
         assertThat(car1.hashCode()).isEqualTo(car2.hashCode());
     }
+    @Test
+    @DisplayName("동등성 테스트 같은 클래스 다른 객체")
+    void  notEqualsTest() {
+        Car car1 = new Car("name");
+        Car car2 = new Car("name1");
+        assertThat(car1).isNotEqualTo(car2);
+        assertThat(car1.hashCode()).isNotEqualTo(car2.hashCode());
+    }
+
+    @Test
+    @DisplayName("동등성 테스트 다른 클래스")
+    void  notEqualsTest2() {
+        Car car1 = new Car("name");
+        Object car2 = new Object();
+        assertThat(car1).isNotEqualTo(car2);
+        assertThat(car1.hashCode()).isNotEqualTo(car2.hashCode());
+    }
 }

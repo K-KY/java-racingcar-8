@@ -26,7 +26,7 @@ public class Car {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (getClass() != o.getClass()) return false;
         Car car = (Car) o;
         return Objects.equals(name, car.name);
     }
