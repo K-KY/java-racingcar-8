@@ -22,14 +22,14 @@ class TrackTest {
     @DisplayName("같은 이름의 자동차가 있으면 false 반환")
     void addCarReturnFalseTest() {
         TRACK.addCar(new Car("add3"));
-        assertThat(TRACK.addCar(new Car("add3"))).isFalse();
+        assertThatThrownBy(() -> TRACK.addCar(new Car("add3"))).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     @DisplayName("같은 이름의 자동차가 있으면 true 반환")
     void containsCarTrueTest() {
-        TRACK.addCar(new Car("name"));
-        assertThat(TRACK.contains(new Car("name"))).isTrue();
+        TRACK.addCar(new Car("NewName"));
+        assertThat(TRACK.contains(new Car("NewName"))).isTrue();
     }
 
     @Test

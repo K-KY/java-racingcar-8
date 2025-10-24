@@ -13,7 +13,7 @@ public class Track {
 
     public boolean addCar(Car car) {
         if (contains(car)) {
-            return false;
+            throw new IllegalArgumentException("이름은 중복 될 수 없습니다. : " + car.getName());
         }
         cars.add(car);
         return true;
