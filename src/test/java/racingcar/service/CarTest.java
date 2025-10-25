@@ -34,8 +34,11 @@ class CarTest {
     void updateCatProgress2() {
         Car car = new Car("name");
         assertThat(car.getProgress()).isEqualTo(0);
-        car.updateProgress(4);
+        car.updateProgress(3);
         assertThat(car.getProgress()).isEqualTo(0);
+
+        assertThat(car.toString()).isEqualTo("name : ");
+
     }
 
     @Test

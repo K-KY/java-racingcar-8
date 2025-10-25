@@ -3,7 +3,7 @@ package racingcar.service;
 import java.util.Objects;
 
 public class Car {
-    private static final int CUT = 5;
+    private static final int CUT = 4;
     private final String name;
     private int progress;
     public Car(String name) {
