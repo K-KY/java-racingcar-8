@@ -8,7 +8,8 @@ import java.util.List;
 public class TrackService {
     private static TrackService trackService;
 
-    private TrackService() {}
+    private TrackService() {
+    }
 
     public static TrackService getInstance() {
         if (trackService == null) {

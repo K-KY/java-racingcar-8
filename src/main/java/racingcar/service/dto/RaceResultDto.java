@@ -5,4 +5,5 @@ import racingcar.service.RaceLog;
 
 import java.util.List;
 
-public record RaceResultDto(List<RaceLog> raceLogs, List<Car> winners) {}
+public record RaceResultDto(List<RaceLog> raceLogs, List<Car> winners) {
+}

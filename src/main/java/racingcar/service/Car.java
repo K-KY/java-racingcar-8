@@ -6,6 +6,7 @@ public class Car {
     private static final int CUT = 4;
     private final String name;
     private int progress;
+
     public Car(String name) {
         this.name = name;
     }
