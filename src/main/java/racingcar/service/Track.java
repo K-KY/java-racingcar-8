@@ -45,4 +45,19 @@ public class Track {
         cars.forEach(car -> car.updateProgress(RandomNumberGenerator.getRandomNumber()));
         return getParticipantProgress();
     }
+
+    public int maxScore() {
+        return cars
+                .stream()
+                .mapToInt(Car::getProgress)
+                .max()
+                .orElse(0);
+    }
+
+    public List<Car> getWinners() {
+        int maxScore = maxScore();
+        return cars.stream()
+                .filter(c -> c.getProgress() >= maxScore)
+                .toList();
+    }
 }
