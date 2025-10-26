@@ -28,8 +28,8 @@ class TrackTest {
     @Test
     @DisplayName("같은 이름의 자동차가 있으면 true 반환")
     void containsCarTrueTest() {
-        TRACK.addCar(new Car("NewName"));
-        assertThat(TRACK.contains(new Car("NewName"))).isTrue();
+        TRACK.addCar(new Car("98765"));
+        assertThat(TRACK.contains(new Car("98765"))).isTrue();
     }
 
     @Test
