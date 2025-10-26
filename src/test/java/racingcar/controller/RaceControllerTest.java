@@ -13,7 +13,8 @@ class RaceControllerTest {
     @DisplayName("컨트롤러 테스트")
     void race() {
         RaceController instance = RaceController.getInstance();
-        assertThat(instance.race(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"}, 5))
+        assertThat(instance.race(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"}, 5)
+                .raceLogs())
                 .anyMatch(RaceLog.class::isInstance);
     }
 

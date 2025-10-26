@@ -2,9 +2,8 @@ package racingcar.controller;
 
 import racingcar.service.Track;
 import racingcar.service.TrackService;
-import racingcar.service.RaceLog;
+import racingcar.service.dto.RaceResultDto;
 
-import java.util.List;
 
 public class RaceController {
     private static RaceController raceController;
@@ -22,7 +21,7 @@ public class RaceController {
     }
 
 
-    public List<RaceLog> race(String[] participants, int laps) {
+    public RaceResultDto race(String[] participants, int laps) {
         Track track = trackService.addParticipant(participants);
         return trackService.race(track, laps);
     }

@@ -1,5 +1,7 @@
 package racingcar.service;
 
+import racingcar.service.dto.RaceResultDto;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +25,12 @@ public class TrackService {
         return track;
     }
 
-    public List<RaceLog> race(Track track, int laps) {
+    public RaceResultDto race(Track track, int laps) {
         List<RaceLog> raceLogs = new ArrayList<>();
         for (int i = 0; i < laps; i++) {
             raceLogs.add(new RaceLog(track.rollProgress()));
         }
-        return raceLogs;
+        List<Car> winners = track.getWinners();
+        return new RaceResultDto(raceLogs, winners);
     }
 }
