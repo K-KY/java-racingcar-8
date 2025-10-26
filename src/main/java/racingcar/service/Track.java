@@ -1,5 +1,7 @@
 package racingcar.service;
 
+import racingcar.service.validator.CarNameChecker;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,6 +17,8 @@ public class Track {
         if (contains(car)) {
             throw new IllegalArgumentException("이름은 중복 될 수 없습니다. : " + car.getName());
         }
+        CarNameChecker.emptyCheck(car.getName());
+        CarNameChecker.lengthCheck(car.getName());
         cars.add(car);
         return true;
     }
