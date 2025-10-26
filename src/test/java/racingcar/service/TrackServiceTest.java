@@ -1,6 +1,7 @@
 package racingcar.service;
 
 import org.junit.jupiter.api.Test;
+import racingcar.service.dto.RaceResultDto;
 
 import java.util.List;
 
@@ -19,9 +20,8 @@ class TrackServiceTest {
     void race() {
         TrackService instance = TrackService.getInstance();
         Track track = instance.addParticipant(new String[]{"1", "2", "3", "4"});
-        List<RaceLog> race = instance.race(track, 10);
-        assertThat(race).isInstanceOf(List.class);
-        assertThat(race)
-                .allMatch(RaceLog.class::isInstance);
+        RaceResultDto race = instance.race(track, 10);
+        assertThat(race.raceLogs()).isInstanceOf(List.class);
+        assertThat(race.raceLogs()).allMatch(RaceLog.class::isInstance);
     }
 }
